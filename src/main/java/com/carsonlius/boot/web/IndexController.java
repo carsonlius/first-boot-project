@@ -60,7 +60,6 @@ public class IndexController {
     public ModelAndView showJsp()
     {
         ModelAndView modelAndView = new ModelAndView();
-
         modelAndView.setViewName("showJsp");
         modelAndView.addObject("name", "刘森");
         return modelAndView;
