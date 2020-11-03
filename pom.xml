@@ -75,6 +75,8 @@
 	</dependencies>
 
 	<build>
+
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -99,7 +101,16 @@
 				<directory>src/main/webapp</directory>
 				<targetPath>META-INF/resources</targetPath>
 			</resource>
-		</resources>
 
+<!--			手动指定字段文件夹-->
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
 	</build>
 </project>
