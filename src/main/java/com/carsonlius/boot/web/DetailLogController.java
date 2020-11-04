@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author carsonlius
+ */
 @Controller
 public class DetailLogController {
     @Autowired
@@ -17,11 +20,11 @@ public class DetailLogController {
 
     @RequestMapping(value="log")
     @ResponseBody
-    public Map<String, Object> log(int logId)
+    public SystemLogDetails log(int logId)
     {
-        SystemLogDetails logDetails = systemLogDetailsService.queryLogById(logId);
+        SystemLogDetails systemLogDetails =   systemLogDetailsService.queryLogById(logId);
 
-        Map<String, Object> defaultMap = new HashMap<>();
-        return logDetails != null ? (Map<String, Object>) logDetails : defaultMap;
+        System.out.println(systemLogDetails);
+        return systemLogDetails;
     }
 }

@@ -3,7 +3,7 @@ package com.carsonlius.boot.mapper;
 import com.carsonlius.boot.model.SystemLogDetails;
 import org.apache.ibatis.annotations.Mapper;
 
-@Mapper // 扫描到容器
+@Mapper
 public interface SystemLogDetailsMapper {
     int deleteByPrimaryKey(Integer recId);
 
