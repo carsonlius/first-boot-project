@@ -27,4 +27,24 @@ public class DetailLogController {
         System.out.println(systemLogDetails);
         return systemLogDetails;
     }
+
+    @RequestMapping(value = "update")
+    @ResponseBody
+    public Map<String, Object> update(int id, String remark)
+    {
+        SystemLogDetails systemLogDetails = new SystemLogDetails();
+        systemLogDetails.setRecId(id);
+        systemLogDetails.setRemark(remark);
+//        systemLogDetails.setRequestId("请求ID");
+
+
+       int updateCount = systemLogDetailsService.updateStudentById(systemLogDetails);
+
+
+       Map<String, Object> response = new HashMap<>();
+       response.put("status", 0);
+       response.put("count", updateCount);
+       response.put("message", "更新成功");
+       return response;
+    }
 }
