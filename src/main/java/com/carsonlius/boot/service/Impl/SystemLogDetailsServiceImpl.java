@@ -1,5 +1,6 @@
 package com.carsonlius.boot.service.Impl;
 
+import com.carsonlius.boot.mapper.SystemLogDetailsMapper;
 import com.carsonlius.boot.model.SystemLogDetails;
 import com.carsonlius.boot.service.SystemLogDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
