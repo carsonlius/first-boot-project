@@ -9,7 +9,7 @@
     <context id="tables" targetRuntime="MyBatis3">
         <!-- 抑制生成注释，由于生成的注释都是英文的，可以不让它生成 -->
         <commentGenerator>
-            <property name="suppressAllComments" value="true"/>
+            <property name="suppressAllComments" value="false"/>
         </commentGenerator>
         <!-- 配置数据库连接信息 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
