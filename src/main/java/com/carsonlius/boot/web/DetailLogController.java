@@ -4,8 +4,7 @@ import com.carsonlius.boot.model.SystemLogDetails;
 import com.carsonlius.boot.service.SystemLogDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,14 +12,14 @@ import java.util.Map;
 /**
  * @author carsonlius
  */
-@Controller
+//@Controller
+@RestController
 public class DetailLogController {
     @Autowired
     private SystemLogDetailsService systemLogDetailsService;
 
-    @RequestMapping(value="log")
-    @ResponseBody
-    public SystemLogDetails log(int logId)
+    @GetMapping(value="log/{logId}")
+    public SystemLogDetails log(@PathVariable("logId") Integer logId)
     {
         SystemLogDetails systemLogDetails =   systemLogDetailsService.queryLogById(logId);
 
@@ -28,14 +27,12 @@ public class DetailLogController {
         return systemLogDetails;
     }
 
-    @RequestMapping(value = "update")
-    @ResponseBody
-    public Map<String, Object> update(int id, String remark)
+    @GetMapping(value = "update/{id}/{remark}")
+    public Map<String, Object> update( @PathVariable String remark, @PathVariable Integer id)
     {
         SystemLogDetails systemLogDetails = new SystemLogDetails();
         systemLogDetails.setRecId(id);
         systemLogDetails.setRemark(remark);
-//        systemLogDetails.setRequestId("请求ID");
 
 
        int updateCount = systemLogDetailsService.updateStudentById(systemLogDetails);
