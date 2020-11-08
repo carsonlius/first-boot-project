@@ -6,4 +6,6 @@ public interface SystemLogDetailsService {
     com.carsonlius.boot.model.SystemLogDetails queryLogById(int id);
 
     int updateStudentById(SystemLogDetails systemLogDetails);
+
+    void cacheRedis(String key, String value);
 }

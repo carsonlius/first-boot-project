@@ -44,4 +44,15 @@ public class DetailLogController {
        response.put("message", "更新成功");
        return response;
     }
+
+    @GetMapping(value = "setRedis")
+    public Map<String, Object> setRedis()
+    {
+        systemLogDetailsService.cacheRedis("name", "liusen");
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("code", 0);
+        response.put("message", "success");
+        return response;
+    }
 }
