@@ -2,10 +2,12 @@ package com.carsonlius.boot.web;
 
 import com.carsonlius.boot.model.SystemLogDetails;
 import com.carsonlius.boot.service.SystemLogDetailsService;
+import com.sun.xml.internal.rngom.digested.DValuePattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,5 +56,20 @@ public class DetailLogController {
         response.put("code", 0);
         response.put("message", "success");
         return response;
+    }
+
+    @GetMapping(value="/login")
+    public Object login(HttpServletRequest httpServletRequest)
+    {
+        SystemLogDetails systemLogDetails =   systemLogDetailsService.queryLogById(1);
+        httpServletRequest.getSession().setAttribute("log", systemLogDetails);
+
+        return "登录成功";
+    }
+
+    @GetMapping(value = "/errorJsp")
+    public Object error()
+    {
+        return "异常";
     }
 }
