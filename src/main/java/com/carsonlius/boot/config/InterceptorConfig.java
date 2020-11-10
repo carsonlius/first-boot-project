@@ -10,7 +10,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         String[] patterns = {
-                "/**"
+                "/log"
         };
         String[] excludePatterns = {
                 "/errorJsp",
