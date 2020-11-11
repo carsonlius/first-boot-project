@@ -2,9 +2,7 @@ package com.carsonlius.boot.web;
 
 import com.carsonlius.boot.model.SystemLogDetails;
 import com.carsonlius.boot.service.SystemLogDetailsService;
-import com.sun.xml.internal.rngom.digested.DValuePattern;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
