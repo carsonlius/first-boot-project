@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/helloServlet")
+@WebServlet(value = "/helloServlet")
 public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("get request ===>"+ req);
-        super.doGet(req, resp);
+        resp.getWriter().println("世界你好 hello world");
+        resp.setContentType("text/html;character=utf-8");
+        resp.getWriter().flush();
+        resp.getWriter().close();
+//        super.doGet(req, resp);
     }
 
     @Override
