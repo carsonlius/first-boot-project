@@ -125,6 +125,14 @@
 				</includes>
 				<filtering>false</filtering>
 			</resource>
+
+<!--			 设置打包配置文件-->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
 		</resources>
 	</build>
 </project>
