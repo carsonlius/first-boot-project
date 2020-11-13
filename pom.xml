@@ -15,7 +15,7 @@
 	<description>第一个spring boot应用</description>
 
 <!--	修改打包方式 war-->
-	<packaging>war</packaging>
+<!--	<packaging>war</packaging>-->
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -85,7 +85,7 @@
 
 	<build>
 <!--		指定打war包的名称-->
-		<finalName>firstSpringBootProjectWar</finalName>
+		<finalName>firstSpringBootProjectJar</finalName>
 
 		<plugins>
 			<plugin>
