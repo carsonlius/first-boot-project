@@ -15,7 +15,7 @@
 	<description>第一个spring boot应用</description>
 
 <!--	修改打包方式 war-->
-<!--	<packaging>war</packaging>-->
+	<packaging>war</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -26,8 +26,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
+		</dependency>
 
-<!--		 tomcat对jsp的解析依赖，如果只是展示jsp，只需要添加下面一个依赖-->
+		<!--		 tomcat对jsp的解析依赖，如果只是展示jsp，只需要添加下面一个依赖-->
 		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
@@ -85,7 +90,7 @@
 
 	<build>
 <!--		指定打war包的名称-->
-		<finalName>firstSpringBootProjectJar</finalName>
+		<finalName>firstSpringBootProject</finalName>
 
 		<plugins>
 			<plugin>

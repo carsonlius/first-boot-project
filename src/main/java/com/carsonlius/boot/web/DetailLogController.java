@@ -2,6 +2,7 @@ package com.carsonlius.boot.web;
 
 import com.carsonlius.boot.model.SystemLogDetails;
 import com.carsonlius.boot.service.SystemLogDetailsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +13,22 @@ import java.util.Map;
 /**
  * @author carsonlius
  */
-//@Controller
 @RestController
+@Slf4j
 public class DetailLogController {
     @Autowired
     private SystemLogDetailsService systemLogDetailsService;
+
+
+    @GetMapping(value="logs/{logId}")
+    public SystemLogDetails  getLogDetail (@PathVariable("logId") Integer logId)
+    {
+        SystemLogDetails systemLogDetails =   systemLogDetailsService.queryLogById(logId);
+        log.info("打印正常信息 ==========>" + systemLogDetails);
+        log.error("打印错误信息 ==========>" + systemLogDetails);
+
+        return systemLogDetails;
+    }
 
     @GetMapping(value="log/{logId}")
     public SystemLogDetails log(@PathVariable("logId") Integer logId)
